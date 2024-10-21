@@ -1,30 +1,49 @@
 # Pwnagotchi Wi-Fi Security Project
 
 ## Overview
-This project involves configuring and deploying a Pwnagotchi device to capture Wi-Fi handshakes for ethical hacking and network security research. The Pwnagotchi is based on a Raspberry Pi and uses machine learning to maximize the number of Wi-Fi handshakes it can capture.
+This project demonstrates the setup of a Pwnagotchi device using a **Raspberry Pi Zero W/H**. The Pwnagotchi is configured to capture Wi-Fi handshakes in a network for ethical hacking and security research. This project is based on the [Pwnagotchi GitHub repository by Jayofelony](https://github.com/jayofelony/pwnagotchi) and was built following [this video tutorial](https://www.youtube.com/watch?v=gyKT_mASSuc).
 
-## Tools & Technologies
-- **Raspberry Pi Zero W**
+## Hardware Used
+- **Raspberry Pi Zero W/H**
+- **Micro SD Card (16GB or higher)**
 - **Pwnagotchi Firmware**
-- **Kali Linux**
-- **Wireshark** (for analyzing the captured data)
-- **Python** (for scripting)
+- **USB Power Supply**
+- **Wireshark** for handshake analysis
 
 ## Setup & Installation
-1. **Install the Pwnagotchi firmware**: Follow the official instructions from the [Pwnagotchi GitHub repository](https://github.com/evilsocket/pwnagotchi).
-2. **Configure the device**: Customize the `config.toml` file to enable specific Wi-Fi channels and power settings.
-3. **Run the device**: Deploy the Pwnagotchi and allow it to capture Wi-Fi handshakes in various environments.
+
+1. **Flash the Pwnagotchi firmware** onto the SD card using **Balena Etcher**. You can download the firmware from the [official Pwnagotchi GitHub](https://github.com/evilsocket/pwnagotchi).
+   
+2. **Modify the `config.toml` file** with settings optimized for the Raspberry Pi Zero W/H, including channel hopping and power settings:
+   - Set `main.plugins.ai.enabled = true` to enable the AI plugin for optimizing Wi-Fi handshake captures.
+   
+3. **Follow the detailed setup guide** from [Jayofelony’s GitHub repository](https://github.com/jayofelony/pwnagotchi) for Raspberry Pi-specific instructions.
+
+4. **Run the Pwnagotchi**: Power up the Raspberry Pi and let the Pwnagotchi start capturing Wi-Fi handshakes.
+
+5. **Analyze captured handshakes**: Use **Wireshark** or **aircrack-ng** to analyze the captured data and test network security.
 
 ## Key Features
-- **Automated Wi-Fi handshake capture**: The Pwnagotchi device uses AI to optimize the capture process.
-- **Data Analysis**: Use Wireshark to analyze the captured handshakes and assess network vulnerabilities.
-- **Custom Configuration**: Adjusted power settings and channel selection for optimal handshake capture.
+- **Automated Wi-Fi handshake capture** using a Raspberry Pi Zero W/H.
+- **AI-optimized capture process** with channel hopping and power adjustments.
+- **Custom configuration**: `config.toml` file tailored to maximize efficiency in capturing handshakes.
+
+## Tools & Technologies
+- **Pwnagotchi firmware**
+- **Raspberry Pi Zero W/H**
+- **Wireshark** for packet capture analysis
+- **Python** (for scripting and automation)
 
 ## Lessons Learned
-- **Wi-Fi Security**: Gained hands-on experience in assessing the vulnerabilities of Wi-Fi networks.
-- **Machine Learning**: Learned how the Pwnagotchi uses reinforcement learning to improve handshake capture efficiency.
-- **Networking Tools**: Deepened knowledge of networking tools like Wireshark and aircrack-ng.
+- **Wi-Fi Security**: Practical experience in capturing and analyzing Wi-Fi handshakes for security testing.
+- **Device Configuration**: Learned how to configure and optimize a Pwnagotchi on Raspberry Pi Zero W/H.
+- **AI Optimization**: Explored how the AI feature in Pwnagotchi enhances capture efficiency.
 
 ## Next Steps
-- **Expand scope**: Plan to explore advanced de-authentication attacks and WPA cracking using the captured handshakes.
-- **Further automation**: Automate data analysis with Python for faster processing of large datasets.
+- **Implement WPA handshake cracking** using tools like **aircrack-ng**.
+- **Explore de-authentication attacks** and their prevention methods.
+
+## References
+- [Pwnagotchi Official Repository](https://github.com/evilsocket/pwnagotchi)
+- [Jayofelony's Pwnagotchi Guide](https://github.com/jayofelony/pwnagotchi)
+- [YouTube Video Guide](https://www.youtube.com/watch?v=gyKT_mASSuc)
